@@ -15,17 +15,21 @@
 
     <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIは非表示） -->
     <a-scene embedded arjs="debugUIEnabled:false;">
-      <a-assets>
+      <!--a-assets>
                   <a-asset-item id="obj" src="yajuu3/yajuu3.pmx"></a-asset-item>
                   <a-asset-item id="mtl" src="yajuu3/yajuu_tex.tga"></a-asset-item>
-             </a-assets>
+             </a-assets-->
       <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
       <a-marker preset="hiro">
         <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
         <!--a-box position="0 0.5 0" wireframe="true"></a-box-->
         <a-text value="Happy New Year 2019" position=" 0 6 -1" align="center" rotation="0 0 0" color="#DD4827" scale="1.5 1.5 1.5">
         </a-text>
-          <a-mmd-model src="#obj" mtl="#mtl" scale="3 3 3 " position="0 0 0">
+        <a-entity mmd="">
+      <a-entity mmd-model="model:./yajuu3/yajuu3.pmx;
+                           vmd:https://cdn.rawgit.com/mrdoob/three.js/dev/examples/models/mmd/vmds/wavefile_v2.vmd;">
+                         </a-entity>
+          <!--a-mmd-model src="#obj" mtl="#mtl" scale="3 3 3 " position="0 0 0">
             <a-animation
                         attribute="rotation"
                         to="0 360 0"
@@ -33,7 +37,7 @@
                         easing="linear"
                         repeat="indefinite">
                       </a-animation>
-                    </a-mmd-model>
+                    </a-mmd-model-->
       </a-marker>
 
       <!-- AR用のカメラを置く -->
