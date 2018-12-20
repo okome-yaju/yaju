@@ -8,6 +8,7 @@
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <!-- AR.js ライブラリの読み込み -->
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.rawgit.com/takahirox/a-mmd/v1.0.3/build/a-mmd.min.js"></script>
 
   </head>
   <body style="margin:0px; overflow:hidden;">
@@ -15,8 +16,8 @@
     <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIは非表示） -->
     <a-scene embedded arjs="debugUIEnabled:false;">
       <a-assets>
-                  <a-asset-item id="obj" src="model/model.obj"></a-asset-item>
-                  <a-asset-item id="mtl" src="model/materials.mtl"></a-asset-item>
+                  <a-asset-item id="obj" src="yajuu3/yajuu3.pmx"></a-asset-item>
+                  <a-asset-item id="mtl" src="yajuu3/yajuu_tex.tga"></a-asset-item>
              </a-assets>
       <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
       <a-marker preset="hiro">
@@ -24,7 +25,7 @@
         <!--a-box position="0 0.5 0" wireframe="true"></a-box-->
         <a-text value="Happy New Year 2019" position=" 0 6 -1" align="center" rotation="0 0 0" color="#DD4827" scale="1.5 1.5 1.5">
         </a-text>
-          <a-obj-model src="#obj" mtl="#mtl" scale="3 3 3 " position="0 0 0">
+          <a-mmd-model src="#obj" mtl="#mtl" scale="3 3 3 " position="0 0 0">
             <a-animation
                         attribute="rotation"
                         to="0 360 0"
@@ -32,7 +33,7 @@
                         easing="linear"
                         repeat="indefinite">
                       </a-animation>
-                    </a-obj-model>
+                    </a-mmd-model>
       </a-marker>
 
       <!-- AR用のカメラを置く -->
